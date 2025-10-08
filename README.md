@@ -1,8 +1,106 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+---
 
-## Getting Started
+## ✨ Key Features
 
-First, run the development server:
+- **Interactive Dashboard:** A professional "mission control" UI built with Next.js and Tailwind CSS for configuring optimization parameters and visualizing results.
+- **Autonomous AI Agents:** A team of specialized AI agents (managed by CrewAI) that automate the entire analysis pipeline, including data gathering, optimization, and reporting.
+- **Quantum-Powered Optimization:** Implements the **Quantum Approximate Optimization Algorithm (QAOA)** using IBM's Qiskit to efficiently solve the complex combinatorial problem of asset selection.
+- **Advanced Financial Metrics:** The system calculates and displays key metrics, including Expected Return, Volatility, Sharpe Ratio, and Monte Carlo simulation results.
+- **Real-Time Logging:** A "cinematic" log stream with a typing animation and sound effects provides a transparent, engaging view into the agents' decision-making process.
+
+---
+
+## 🏛️ Project Architecture & Pipeline
+
+The application follows a modern, decoupled architecture with a clear data flow from the client to the quantum core and back.
+
++--------------------------+
+|   Frontend (Next.js)     |
+| - User Configuration     |
+| - Results Visualization  |
++--------------------------+
+|
+| (HTTP POST Request to /optimize)
+v
++--------------------------+
+|  Backend API (Litestar)  |
+| - Receives & Validates   |
+| - Initiates Crew         |
++--------------------------+
+|
+| (CrewAI Workflow Begins)
+v
++--------------------------+      +-------------------------+      +--------------------------+
+|   Agent 1:               |----->|   Agent 2:              |----->|   Agent 3:               |
+|   Market Analyst         |      |   Quantum Strategist    |      |   AI Financial Advisor   |
+|   (Fetches Market Data)  |      |   (Runs Quantum Core)   |      |   (Writes Final Report)  |
++--------------------------+      +-------------------------+      +--------------------------+
+|
+| (Calls Qiskit Function)
+v
++--------------------------+
+|   Quantum Core (Qiskit)  |
+| - Formulates QUBO        |
+| - Solves with QAOA       |
++--------------------------+
+---
+
+## 🛠️ Technology Stack
+
+This project utilizes a modern, high-performance technology stack across the full spectrum of development.
+
+| Category          | Technology                                                                                                  | Purpose                                                                                |
+| ----------------- | ----------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| **Frontend** | `Next.js (React)`, `Tailwind CSS`, `Recharts`, `Lucide-React`, `Tone.js`                                      | Building a responsive, interactive, and aesthetically advanced user interface.         |
+| **Backend** | `Python`, `Litestar`, `MsgSpec`, `Uvicorn`                                                                  | Creating a high-performance, asynchronous, and type-safe RESTful API server.           |
+| **AI & LLM** | `CrewAI`, `LangChain`, `Groq Llama3`                                                                          | Orchestrating the autonomous agent workflow and providing the core reasoning engine.     |
+| **Quantum** | `IBM Qiskit`, `Qiskit Aer`                                                                                    | Implementing and simulating the QAOA algorithm for portfolio optimization.             |
+| **Data** | `CoinGecko API`, `NumPy`                                                                                      | Sourcing real-time financial data and performing numerical computations.               |
+
+---
+
+## 🚀 Getting Started
+
+To get a local copy up and running, follow these simple steps.
+
+### Prerequisites
+
+- Node.js and npm (for the frontend)
+- Python 3.10+ and Pip (or a virtual environment manager like Conda)
+- A Groq API Key
+
+### Installation & Setup
+
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/your-username/q-optifolio-dashboard.git](https://github.com/your-username/q-optifolio-dashboard.git)
+    cd q-optifolio-dashboard
+    ```
+
+2.  **Setup the Backend:**
+    - Navigate to the backend directory: `cd app/backend`
+    - Create a virtual environment: `python -m venv venv` and activate it.
+    - Install the required Python packages: `pip install -r requirements.txt`
+    - Create a `.env` file and add your Groq API key:
+      ```
+      GROQ_API_KEY="your_api_key_here"
+      ```
+
+3.  **Setup the Frontend:**
+    - Navigate to the project's root directory.
+    - Install the required npm packages: `npm install`
+
+### Running the Application
+
+1.  **Start the Backend Server:**
+    - From the `app/backend` directory, run:
+      ```bash
+      python main.py
+      ```
+    - The server should now be running on `http://localhost:8000`.
+
+2.  **Start the Frontend Development Server:**
+    - From the project's root directory, run:
 
 ```bash
 npm run dev
