@@ -1,0 +1,119 @@
+
+
+/* ========================
+   Tailwind Base Imports
+======================== */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ========================
+   Root Variables
+======================== */
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --primary: #6366f1; /* Indigo-500 */
+  --secondary: #8b5cf6; /* Purple-500 */
+  --font-sans: 'Inter', Arial, Helvetica, sans-serif;
+  --font-mono: 'Fira Code', monospace;
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    --primary: #818cf8; /* Indigo-400 */
+    --secondary: #a78bfa; /* Purple-400 */
+  }
+}
+
+/* ========================
+   Global Styles
+======================== */
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* Links */
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--secondary);
+  text-decoration: underline;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-sans);
+  color: var(--foreground);
+}
+
+/* Code / Monospace */
+code, pre {
+  font-family: var(--font-mono);
+  background-color: rgba(0,0,0,0.05);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+  font-size: 0.9rem;
+}
+
+pre {
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+/* Markdown Styling */
+.prose {
+  color: var(--foreground);
+}
+
+.prose a {
+  color: var(--primary);
+}
+
+.prose h1, .prose h2, .prose h3 {
+  color: var(--foreground);
+}
+
+/* Pie Chart Container */
+.pie-chart-container {
+  width: 100%;
+  height: 100%;
+}
+
+/* Buttons */
+button {
+  font-family: var(--font-sans);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Loading Spinner */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Optional: Smooth scroll for better UX */
+html {
+  scroll-behavior: smooth;
+}

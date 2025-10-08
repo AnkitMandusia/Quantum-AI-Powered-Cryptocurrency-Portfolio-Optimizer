@@ -1,0 +1,33 @@
+litestar[standard]
+python-dotenv
+
+# Core AI Orchestration
+crewai==0.35.8
+crewai-tools==0.4.0
+
+# LangChain and LLMs
+langchain>=0.1.4,<0.2.0
+langchain-community>=0.0.30,<0.2.0
+langchain-openai
+langchain-groq<0.2.0
+langchain-cohere<0.2.0
+
+# Quantum Computing
+qiskit==2.1.1
+qiskit-optimization
+qiskit-aer
+qiskit_algorithms
+
+# Web Framework
+fastapi
+uvicorn==0.29.0
+python-multipart
+
+# Utilities
+numpy
+pycoingecko
+msgspec
+nest_asyncio
+
+# Optional: visualization for Qiskit
+qiskit[visualization]
