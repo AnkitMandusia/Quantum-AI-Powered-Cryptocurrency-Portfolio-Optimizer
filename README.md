@@ -20,7 +20,7 @@ See Q-OptiFolio in action! This video demonstrates the full workflow, from confi
 
 <p align="center">
   <a href="[https://www.youtube.com/watch?v=your-video-id](https://youtu.be/HNmMWfzpmMU)">
-    <img src="https://img.youtube.com/vi/your-video-id/0.jpg" alt="Q-OptiFolio Demo Video">
+    <img src="qport2.png" alt="Q-OptiFolio Demo Video">
   </a>
 </p>
 
